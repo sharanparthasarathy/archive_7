@@ -1,14 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { REPORTS } from "../data/archive";
 import { GlitchText } from "../components/horror/GlitchText";
 
-export const Route = createFileRoute("/reports")({
-  head: () => ({ meta: [{ title: "ARCHIVE-7 // INCIDENT REPORTS" }] }),
-  component: Reports,
-});
+// export const Route = createFileRoute("/reports")({
+//   head: () => ({ meta: [{ title: "ARCHIVE-7 // INCIDENT REPORTS" }] }),
+//   component: Reports,
+// });
 
-function Reports() {
+export default function Reports() {
   const [open, setOpen] = useState<string | null>(null);
   return (
     <main className="relative mx-auto min-h-screen max-w-5xl px-6 pt-24 pb-16">

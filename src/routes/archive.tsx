@@ -1,13 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { TAPES } from "../data/archive";
 import { GlitchText } from "../components/horror/GlitchText";
 
-export const Route = createFileRoute("/archive")({
-  head: () => ({ meta: [{ title: "ARCHIVE-7 // RECOVERED TAPES" }] }),
-  component: Archive,
-});
+// export const Route = createFileRoute("/archive")({
+//   head: () => ({ meta: [{ title: "ARCHIVE-7 // RECOVERED TAPES" }] }),
+//   component: Archive,
+// });
 
-function Archive() {
+export default function Archive() {
   return (
     <main className="relative mx-auto min-h-screen max-w-6xl px-6 pt-24 pb-16">
       <header className="mb-12">
@@ -24,8 +24,7 @@ function Archive() {
         {TAPES.map((t) => (
           <Link
             key={t.id}
-            to="/archive/$id"
-            params={{ id: t.id }}
+            to={`/archive/${t.id}`}
             className="vhs-card group block border border-ash-light bg-black/60 transition-colors hover:border-blood"
           >
             <TapeThumb hue={t.hue} />

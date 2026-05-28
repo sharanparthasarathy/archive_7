@@ -1,17 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { TypingTerminal } from "../components/horror/TypingTerminal";
 import { GlitchText } from "../components/horror/GlitchText";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "ARCHIVE-7 // ACCESS GRANTED" },
-      { name: "description", content: "Recovered footage. Incident reports. Live surveillance feeds. Do not watch alone." },
-    ],
-  }),
-  component: Index,
-});
+// export const Route = createFileRoute("/")({
+//   head: () => ({
+//     meta: [
+//       { title: "ARCHIVE-7 // ACCESS GRANTED" },
+//       { name: "description", content: "Recovered footage. Incident reports. Live surveillance feeds. Do not watch alone." },
+//     ],
+//   }),
+//   component: Index,
+// });
 
 const WARNINGS = [
   "ARCHIVE ACCESS DETECTED",
@@ -21,7 +21,7 @@ const WARNINGS = [
   "THEY KNOW",
 ];
 
-function Index() {
+export default function Index() {
   const [warning, setWarning] = useState<{ text: string; x: number; y: number; key: number } | null>(null);
   useEffect(() => {
     let k = 0;

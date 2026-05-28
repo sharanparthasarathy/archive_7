@@ -1,14 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CAMERAS } from "../data/archive";
 import { GlitchText } from "../components/horror/GlitchText";
 
-export const Route = createFileRoute("/surveillance")({
-  head: () => ({ meta: [{ title: "ARCHIVE-7 // LIVE FEEDS" }] }),
-  component: Surveillance,
-});
+  // export const Route = createFileRoute("/surveillance")({
+  //   head: () => ({ meta: [{ title: "ARCHIVE-7 // LIVE FEEDS" }] }),
+  //   component: Surveillance,
+  // });
 
-function Surveillance() {
+export default function Surveillance() {
   const [lostIds, setLostIds] = useState<Record<string, boolean>>({});
   const [motion, setMotion] = useState<string | null>(null);
   useEffect(() => {

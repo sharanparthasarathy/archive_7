@@ -1,13 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GlitchText } from "../components/horror/GlitchText";
 
-export const Route = createFileRoute("/signal")({
-  head: () => ({ meta: [{ title: "ARCHIVE-7 // THE SIGNAL" }] }),
-  component: Signal,
-});
+// export const Route = createFileRoute("/signal")({
+//   head: () => ({ meta: [{ title: "ARCHIVE-7 // THE SIGNAL" }] }),
+//   component: Signal,
+// });
 
-function Signal() {
+export default function Signal() {
   const [bars, setBars] = useState<number[]>(Array.from({ length: 64 }, () => Math.random()));
   const [clue, setClue] = useState(false);
   useEffect(() => {
